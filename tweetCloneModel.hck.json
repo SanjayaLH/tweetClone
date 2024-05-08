@@ -1,0 +1,765 @@
+{
+    "modelName": "tweetCloneModel",
+    "collections": [
+        {
+            "collectionName": "tweets",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "2a005bd6-438c-49ac-a123-19241bc8c18f",
+                    "required": true,
+                    "primaryKey": true,
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "94710706-cd86-4fe7-9093-ab302de729d5",
+                    "foreignField": [
+                        "94710706-cd86-4fe7-9093-ab302de729d5",
+                        "eeefebfa-dc1e-4c49-9078-5a11c21d698d"
+                    ],
+                    "parentRelationship": "451d354b-217e-4a1b-b5de-566bfde6bd66",
+                    "childRelationships": [
+                        "fd798f70-ffbc-428b-86be-57da764c6f95"
+                    ]
+                },
+                {
+                    "name": "userId",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "02019e68-3b08-43b1-9fe1-12495f8bbff9",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "content",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "4d2406fb-6a56-4371-b680-7042ccf4ad0a",
+                    "error": {}
+                },
+                {
+                    "name": "createdAt",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "GUID": "0d65adbb-e009-432d-9664-0fd78daeb642",
+                    "now": true,
+                    "error": {}
+                },
+                {
+                    "name": "likes",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "error": {},
+                    "GUID": "0e9dd599-00fc-435c-8297-4c46e9c592ea"
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "31426040-709d-4f11-a544-1abc8c23a291"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "3f51d0b7-8816-4c93-b681-a464611b6b81"
+        },
+        {
+            "collectionName": "likes",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "53a729a3-abf4-4352-9703-1d762876ab37",
+                    "required": true,
+                    "primaryKey": true,
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "3f51d0b7-8816-4c93-b681-a464611b6b81",
+                    "foreignField": [
+                        "3f51d0b7-8816-4c93-b681-a464611b6b81",
+                        "2a005bd6-438c-49ac-a123-19241bc8c18f"
+                    ],
+                    "parentRelationship": "fd798f70-ffbc-428b-86be-57da764c6f95"
+                },
+                {
+                    "name": "userId",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "8c7cd79e-8125-4678-a97e-ed29724d8e4a",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "tweetId",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "error": {},
+                    "GUID": "f694a73d-6c17-44d1-ac91-6bf19fd421dd"
+                },
+                {
+                    "name": "createdAt",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "GUID": "85f45b11-433c-406a-8d36-0e53a5863da5",
+                    "now": true,
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "5cd1e0cf-8d21-42cd-803b-2840ac443c98"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "d7b63363-aa0a-4c41-94cf-33f43f43b461"
+        },
+        {
+            "collectionName": "users",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "eeefebfa-dc1e-4c49-9078-5a11c21d698d",
+                    "required": true,
+                    "primaryKey": true,
+                    "error": {},
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "childRelationships": [
+                        "f2dad690-8a71-4c59-9f24-9b0b5b79968c",
+                        "8f3567f8-5e9e-40dc-8913-f3f8deeeafed",
+                        "451d354b-217e-4a1b-b5de-566bfde6bd66"
+                    ]
+                },
+                {
+                    "name": "firstName",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "2962482c-d6be-4ddc-8add-aa921a7692f2",
+                    "error": {},
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "lastName",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "ba781e13-b611-43e5-9bac-8f66ffe4c93d",
+                    "error": {},
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "email",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "709f807c-b204-46c4-8906-cc80d2d81d19",
+                    "error": {},
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "dateOfBirth",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "error": {},
+                    "GUID": "de5882a0-2542-4caa-b16d-2e877d86d0d5",
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "password",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "09fd5aff-eca4-470a-b7ac-0a8d40294a92",
+                    "error": {},
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "createdAt",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "GUID": "47f6a3f8-f975-41ae-ab32-3dd610944abc",
+                    "now": true,
+                    "error": {},
+                    "foreignCollection": "",
+                    "foreignField": []
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "dbcdcf42-cc2a-4d4d-b429-3dbc65c10e32"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "94710706-cd86-4fe7-9093-ab302de729d5",
+            "hackoladeMeta": {
+                "namingConvention": ""
+            },
+            "bucketId": ""
+        },
+        {
+            "collectionName": "followers",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "f52302f9-f0d5-4653-8d68-ea7735f53f75",
+                    "required": true,
+                    "primaryKey": true,
+                    "error": {},
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "followerId",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "536d4656-1f7b-43d3-aa34-4a90398fad3a",
+                    "required": true,
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "94710706-cd86-4fe7-9093-ab302de729d5",
+                    "foreignField": [
+                        "94710706-cd86-4fe7-9093-ab302de729d5",
+                        "eeefebfa-dc1e-4c49-9078-5a11c21d698d"
+                    ],
+                    "parentRelationship": "f2dad690-8a71-4c59-9f24-9b0b5b79968c"
+                },
+                {
+                    "name": "followeeId",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "error": {},
+                    "GUID": "074f56c8-31c7-4b42-8446-fe2729b1aef0",
+                    "foreignCollection": "94710706-cd86-4fe7-9093-ab302de729d5",
+                    "foreignField": [
+                        "94710706-cd86-4fe7-9093-ab302de729d5",
+                        "eeefebfa-dc1e-4c49-9078-5a11c21d698d"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "8f3567f8-5e9e-40dc-8913-f3f8deeeafed"
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "7bbbb2fd-8fbe-4ba3-b90f-8ee74d203097"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "8c69530b-e537-4c19-8a5d-a4e34f7a4f53",
+            "bucketId": ""
+        }
+    ],
+    "buckets": [],
+    "views": [],
+    "relationships": [
+        {
+            "name": "fk followers.followerId to users._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "94710706-cd86-4fe7-9093-ab302de729d5",
+                    "eeefebfa-dc1e-4c49-9078-5a11c21d698d"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "8c69530b-e537-4c19-8a5d-a4e34f7a4f53",
+                    "536d4656-1f7b-43d3-aa34-4a90398fad3a"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "94710706-cd86-4fe7-9093-ab302de729d5",
+            "childCollection": "8c69530b-e537-4c19-8a5d-a4e34f7a4f53",
+            "GUID": "f2dad690-8a71-4c59-9f24-9b0b5b79968c",
+            "hackoladeStyles": {
+                "GUID": "a938a912-dd23-4f22-b076-e5c4b70d199c",
+                "autoPositioning": false,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1417.2681388012622,
+                        "y": 952.3615886385647
+                    },
+                    {
+                        "x": 1135.9043112513136,
+                        "y": 952.3615886385647
+                    },
+                    {
+                        "x": 1135.9043112513136,
+                        "y": 1083.4994742376439
+                    },
+                    {
+                        "x": 1091.5709779179804,
+                        "y": 1083.4994742376439
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk followers.followeeId to users._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "94710706-cd86-4fe7-9093-ab302de729d5",
+                    "eeefebfa-dc1e-4c49-9078-5a11c21d698d"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "8c69530b-e537-4c19-8a5d-a4e34f7a4f53",
+                    "074f56c8-31c7-4b42-8446-fe2729b1aef0"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "94710706-cd86-4fe7-9093-ab302de729d5",
+            "childCollection": "8c69530b-e537-4c19-8a5d-a4e34f7a4f53",
+            "GUID": "8f3567f8-5e9e-40dc-8913-f3f8deeeafed",
+            "hackoladeStyles": {
+                "GUID": "887f9a9e-9952-4b79-bf9e-0cbd6c6c278a",
+                "autoPositioning": false,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1417.2681388012622,
+                        "y": 931.9391563300289
+                    },
+                    {
+                        "x": 1215.9043112513139,
+                        "y": 931.9391563300289
+                    },
+                    {
+                        "x": 1215.9043112513139,
+                        "y": 1092.8328075709771
+                    },
+                    {
+                        "x": 1091.5709779179804,
+                        "y": 1092.8328075709771
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk tweets._id to users._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "94710706-cd86-4fe7-9093-ab302de729d5",
+                    "eeefebfa-dc1e-4c49-9078-5a11c21d698d"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "3f51d0b7-8816-4c93-b681-a464611b6b81",
+                    "2a005bd6-438c-49ac-a123-19241bc8c18f"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "94710706-cd86-4fe7-9093-ab302de729d5",
+            "childCollection": "3f51d0b7-8816-4c93-b681-a464611b6b81",
+            "GUID": "451d354b-217e-4a1b-b5de-566bfde6bd66",
+            "hackoladeStyles": {
+                "GUID": "8ca0fee0-dd84-491e-84e1-b43c1dd6d255",
+                "autoPositioning": false,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1169.9400630914831,
+                        "y": 1338.902678201572
+                    },
+                    {
+                        "x": 1141.6067297581499,
+                        "y": 1338.902678201572
+                    },
+                    {
+                        "x": 1141.6067297581499,
+                        "y": 1103.832807570978
+                    },
+                    {
+                        "x": 1091.5709779179804,
+                        "y": 1103.832807570978
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk likes._id to tweets._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "3f51d0b7-8816-4c93-b681-a464611b6b81",
+                    "2a005bd6-438c-49ac-a123-19241bc8c18f"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "d7b63363-aa0a-4c41-94cf-33f43f43b461",
+                    "53a729a3-abf4-4352-9703-1d762876ab37"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "3f51d0b7-8816-4c93-b681-a464611b6b81",
+            "childCollection": "d7b63363-aa0a-4c41-94cf-33f43f43b461",
+            "GUID": "fd798f70-ffbc-428b-86be-57da764c6f95",
+            "hackoladeStyles": {
+                "GUID": "1331a81b-0188-4590-8349-3973ecfc7154",
+                "autoPositioning": false,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1445.1482649842285,
+                        "y": 1181.2807570977923
+                    },
+                    {
+                        "x": 1406.9400630914831,
+                        "y": 1181.2807570977923
+                    },
+                    {
+                        "x": 1406.9400630914831,
+                        "y": 1336.4910620399555
+                    },
+                    {
+                        "x": 1391.9400630914831,
+                        "y": 1336.4910620399555
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        }
+    ],
+    "users": [
+        {
+            "name": "admin",
+            "parentFieldKeyword": "users",
+            "fieldKeyword": "users",
+            "path": [],
+            "data": {
+                "modelName": "tweetCloneModel",
+                "collections": [],
+                "buckets": [],
+                "views": [],
+                "relationships": [],
+                "users": [],
+                "diagramViews": [],
+                "idToNameHashTable": {},
+                "definitions": {
+                    "type": "definitions",
+                    "properties": [],
+                    "GUID": "923d5414-a4ca-4cdf-9432-f7c09dbbe56d"
+                },
+                "polyglotDefinitions": {
+                    "type": "polyglotDefinitions",
+                    "properties": [],
+                    "GUID": "6db89a0f-207b-4d8b-acc7-f07cc93393c6"
+                },
+                "externalDefinitions": {
+                    "type": "externalDefinitions",
+                    "properties": [],
+                    "GUID": "e4241d83-8d04-49be-8930-fec1b25d72dd"
+                },
+                "modelAutoSaved": false,
+                "sources": [],
+                "decorativeSymbols": [],
+                "dbVersion": "v5.0",
+                "dbVendor": "MongoDB",
+                "appTarget": "MONGODB",
+                "creationTS": "2024-05-06T10:39:26.453Z",
+                "GUID": "b514d5e2-f5c6-4391-90f9-7a53f08e0c44",
+                "modelChanged": true,
+                "isLineageEnabled": false,
+                "hackoladeMeta": {
+                    "validationErrors": {
+                        "modelName": false
+                    }
+                },
+                "author": "Sanjaya",
+                "version": "v1.0",
+                "options": [],
+                "compositeOptions": []
+            },
+            "GUID": "1e3da312-3a5f-45ca-87ea-212c51f225b4",
+            "read": true,
+            "readWrite": true,
+            "dbAdmin": true,
+            "userAdmin": true,
+            "clusterAdmin": true,
+            "readAnyDatabase": true,
+            "readWriteAnyDatabase": true,
+            "userAdminAnyDatabase": true,
+            "dbAnyDatabase": true
+        }
+    ],
+    "diagramViews": [],
+    "idToNameHashTable": {
+        "3f51d0b7-8816-4c93-b681-a464611b6b81": "tweets",
+        "2a005bd6-438c-49ac-a123-19241bc8c18f": "_id",
+        "02019e68-3b08-43b1-9fe1-12495f8bbff9": "userId",
+        "4d2406fb-6a56-4371-b680-7042ccf4ad0a": "content",
+        "0d65adbb-e009-432d-9664-0fd78daeb642": "createdAt",
+        "0e9dd599-00fc-435c-8297-4c46e9c592ea": "likes",
+        "d7b63363-aa0a-4c41-94cf-33f43f43b461": "likes",
+        "53a729a3-abf4-4352-9703-1d762876ab37": "_id",
+        "8c7cd79e-8125-4678-a97e-ed29724d8e4a": "userId",
+        "f694a73d-6c17-44d1-ac91-6bf19fd421dd": "tweetId",
+        "85f45b11-433c-406a-8d36-0e53a5863da5": "createdAt",
+        "eeefebfa-dc1e-4c49-9078-5a11c21d698d": "_id",
+        "2962482c-d6be-4ddc-8add-aa921a7692f2": "firstName",
+        "ba781e13-b611-43e5-9bac-8f66ffe4c93d": "lastName",
+        "709f807c-b204-46c4-8906-cc80d2d81d19": "email",
+        "de5882a0-2542-4caa-b16d-2e877d86d0d5": "dateOfBirth",
+        "09fd5aff-eca4-470a-b7ac-0a8d40294a92": "password",
+        "47f6a3f8-f975-41ae-ab32-3dd610944abc": "createdAt",
+        "94710706-cd86-4fe7-9093-ab302de729d5": "users",
+        "f52302f9-f0d5-4653-8d68-ea7735f53f75": "_id",
+        "536d4656-1f7b-43d3-aa34-4a90398fad3a": "followerId",
+        "074f56c8-31c7-4b42-8446-fe2729b1aef0": "followeeId",
+        "8c69530b-e537-4c19-8a5d-a4e34f7a4f53": "followers",
+        "f2dad690-8a71-4c59-9f24-9b0b5b79968c": "fk followers.followerId to users._id",
+        "8f3567f8-5e9e-40dc-8913-f3f8deeeafed": "fk followers.followeeId to users._id",
+        "451d354b-217e-4a1b-b5de-566bfde6bd66": "fk tweets._id to users._id",
+        "fd798f70-ffbc-428b-86be-57da764c6f95": "fk likes._id to tweets._id"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "923d5414-a4ca-4cdf-9432-f7c09dbbe56d"
+    },
+    "polyglotDefinitions": {
+        "type": "polyglotDefinitions",
+        "properties": [],
+        "GUID": "6db89a0f-207b-4d8b-acc7-f07cc93393c6"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "e4241d83-8d04-49be-8930-fec1b25d72dd"
+    },
+    "sources": [],
+    "decorativeSymbols": [],
+    "dbVersion": "v5.0",
+    "dbVendor": "MongoDB",
+    "appTarget": "MONGODB",
+    "creationTS": "2024-05-06T10:39:26.453Z",
+    "GUID": "e94897e3-1a02-4220-a167-8476b67f8aaf",
+    "isLineageEnabled": false,
+    "hackoladeMeta": {
+        "validationErrors": {
+            "modelName": false
+        }
+    },
+    "author": "Sanjaya",
+    "version": "v1.0",
+    "lastModifTS": "2024-05-08T17:37:38.603Z",
+    "persistenceSchemaVersion": "7",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "7.4.0"
+    },
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "3f51d0b7-8816-4c93-b681-a464611b6b81",
+                        "x": 1169.9400630914831,
+                        "y": 1305.491062039956,
+                        "width": 222,
+                        "height": 132,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "d7b63363-aa0a-4c41-94cf-33f43f43b461",
+                        "x": 1445.1482649842285,
+                        "y": 1144.2807570977927,
+                        "width": 200,
+                        "height": 133,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "94710706-cd86-4fe7-9093-ab302de729d5",
+                        "x": 874.5709779179804,
+                        "y": 1068.4994742376439,
+                        "width": 217,
+                        "height": 173,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "8c69530b-e537-4c19-8a5d-a4e34f7a4f53",
+                        "x": 1417.2681388012622,
+                        "y": 883.0725552050449,
+                        "width": 201,
+                        "height": 134,
+                        "color": {}
+                    }
+                ],
+                "erdDefinitions": {
+                    "erd": [],
+                    "rootPath": [],
+                    "entities": [],
+                    "decorativeSymbols": []
+                },
+                "buckets": [],
+                "collapsedNodes": [],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false,
+                "graphView": {
+                    "erd": [],
+                    "buckets": [],
+                    "decorativeSymbols": [],
+                    "forceLayout": true,
+                    "defaultLinkLength": 300
+                },
+                "diagramViews": [],
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": [
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "3f51d0b7-8816-4c93-b681-a464611b6b81"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "d7b63363-aa0a-4c41-94cf-33f43f43b461"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "94710706-cd86-4fe7-9093-ab302de729d5"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "8c69530b-e537-4c19-8a5d-a4e34f7a4f53"
+                    }
+                ],
+                "relationshipUpdateDisabled": false
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "shouldDistributeCollections": false
+        }
+    }
+}
